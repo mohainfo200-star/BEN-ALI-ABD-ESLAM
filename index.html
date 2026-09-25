@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MOHAMED_INFO | Digital Cards</title>
+
+<style>
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Tahoma, Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, #124c91, transparent 40%),
+    linear-gradient(135deg, #030817, #071b3a, #061027);
+  color: white;
+  min-height: 100vh;
+}
+
+header {
+  padding: 25px;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #80d7ff;
+  background: #061127;
+  border-bottom: 1px solid #1d5c9d;
+}
+
+.hero {
+  text-align: center;
+  padding: 60px 15px;
+}
+
+h1 {
+  font-size: 35px;
+  color: #80d7ff;
+  margin-bottom: 15px;
+}
+
+p {
+  color: #b9cce5;
+  line-height: 1.8;
+  margin: 12px 0;
+}
+
+.container {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
+}
+
+.card {
+  background: linear-gradient(145deg, #102b53, #07152e);
+  border: 1px solid #2364a4;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 15px 45px #0006;
+}
+
+.card h2 {
+  color: #80d7ff;
+  margin-bottom: 15px;
+}
+
+.virtual-card {
+  height: 190px;
+  border-radius: 18px;
+  padding: 20px;
+  margin: 20px 0;
+  text-align: left;
+  direction: ltr;
+  background: linear-gradient(135deg, #167ac4, #071735);
+  border: 1px solid #5bc8ff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 10px 30px #0007;
+  overflow: hidden;
+}
+
+.virtual-card.gray {
+  background: linear-gradient(135deg, #aab5c4, #333d4e, #111827);
+  border-color: #d6e0ed;
+}
+
+.virtual-card.purple {
+  background: linear-gradient(135deg, #7655d5, #11173e);
+}
+
+.virtual-card.gold {
+  background: linear-gradient(135deg, #247bb5, #071735);
+}
+
+.chip {
+  width: 43px;
+  height: 30px;
+  border-radius: 6px;
+  background: linear-gradient(135deg, #e5e9ef, #8594a8);
+}
+
+.card-name {
+  font-size: 18px;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.brand {
+  font-size: 17px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+input, select {
+  width: 100%;
+  padding: 14px;
+  margin: 8px 0;
+  border: 1px solid #28639a;
+  border-radius: 10px;
+  background: #061127;
+  color: white;
+  font-size: 16px;
+}
+
+button, .btn {
+  display: inline-block;
+  width: 100%;
+  padding: 14px;
+  margin-top: 12px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(135deg, #80d7ff, #287ce0);
+  color: #031126;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  cursor: pointer;
+  transition: .2s;
+}
+
+button:hover, .btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.price {
+  font-size: 32px;
+  font-weight: bold;
+  color: #80d7ff;
+  margin: 15px 0;
+}
+
+.contact {
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: 40px;
+  background: #08162e;
+  border-top: 1px solid #1d5c9d;
+}
+
+.facebook {
+  display: inline-block;
+  background: #1877f2;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px;
+}
+
+.whatsapp {
+  display: inline-block;
+  background: #20c967;
+  color: white;
+  padding: 15px 25px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 25px;
+  color: #91a9c8;
+  background: #030817;
+}
+
+.note {
+  font-size: 12px;
+  color: #91a9c8;
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+  MOHAMED_INFO
+  <p>Digital Cards & Design</p>
+</header>
+
+<section class="hero">
+  <h1>متجر التصاميم الرقمية</h1>
+  <p>
+    صمّم بطاقتك الرقمية بأسلوبك الخاص،
+    اختر اللون والاسم وأنشئ تصميمك.
+  </p>
+</section>
+
+<div class="container">
+<div class="grid">
+
+<!-- مولد التصاميم -->
+
+<div class="card">
+
+  <h2>مولّد البطاقات الرقمية</h2>
+
+  <p>أنشئ تصميمك الخاص واختر اللون والاسم.</p>
+
+  <div class="virtual-card" id="preview">
+    <div style="display:flex;justify-content:space-between">
+      <div class="chip"></div>
+      <b>MI</b>
+    </div>
+
+    <div class="card-name" id="cardName">
+      YOUR NAME
+    </div>
+
+    <div class="brand">MOHAMED_INFO</div>
+  </div>
+
+  <input
+    type="text"
+    id="name"
+    placeholder="اكتب الاسم على التصميم"
+    maxlength="30"
+  >
+
+  <select id="color">
+    <option value="">أزرق فاخر</option>
+    <option value="gray">رمادي</option>
+    <option value="purple">بنفسجي</option>
+    <option value="gold">أزرق داكن</option>
+  </select>
+
+  <button onclick="generate()">
+    إنشاء التصميم
+  </button>
+
+  <div class="price">300 دج</div>
+
+  <button onclick="orderDesign()">
+    اطلب التصميم عبر واتساب
+  </button>
+
+  <p class="note">
+    التصميم للعرض والتخصيص فقط، وليس بطاقة دفع فعلية.
+  </p>
+
+</div>
+
+<!-- Gray Premium -->
+
+<div class="card">
+
+  <h2>Gray Premium</h2>
+
+  <div class="virtual-card gray">
+    <div style="display:flex;justify-content:space-between">
+      <div class="chip"></div>
+      <b>GRAY</b>
+    </div>
+
+    <div class="card-name">PREMIUM DESIGN</div>
+
+    <div class="brand">MOHAMED_INFO</div>
+  </div>
+
+  <p>
+    تصميم رمادي فاخر بتنسيق أنيق
+    مع إمكانية تخصيص الاسم.
+  </p>
+
+  <div class="price">1000 دج</div>
+
+  <button onclick="orderGray()">
+    اطلب Gray عبر واتساب
+  </button>
+
+  <p class="note">
+    تصميم بصري تجريبي وليس وسيلة دفع أو بطاقة مالية.
+  </p>
+
+</div>
+
+</div>
+</div>
+
+<!-- التواصل -->
+
+<section class="contact">
+
+  <h1>تواصل معنا</h1>
+
+  <p>
+    لطلب التصاميم أو الاستفسار عن الخدمات،
+    تواصل معنا عبر الروابط التالية.
+  </p>
+
+  <a
+    class="facebook"
+    href="https://www.facebook.com/mch.lorinzo"
+    target="_blank"
+    rel="noopener">
+    تواصل عبر Facebook
+  </a>
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/213772711667"
+    target="_blank"
+    rel="noopener">
+    تواصل عبر WhatsApp
+  </a>
+
+</section>
+
+<footer>
+  MOHAMED_INFO © جميع الحقوق محفوظة
+</footer>
+
+<script>
+
+function generate() {
+
+  const name =
+    document.getElementById("name").value.trim();
+
+  const color =
+    document.getElementById("color").value;
+
+  const preview =
+    document.getElementById("preview");
+
+  document.getElementById("cardName").textContent =
+    name || "YOUR NAME";
+
+  preview.className = "virtual-card " + color;
+}
+
+function orderDesign() {
+
+  const name =
+    document.getElementById("name").value.trim()
+    || "بدون اسم";
+
+  const color =
+    document.getElementById("color").value
+    || "أزرق";
+
+  const message =
+    "السلام عليكم، أريد طلب تصميم رقمي بسعر 300 دج. " +
+    "الاسم: " + name +
+    "، اللون: " + color;
+
+  window.open(
+    "https://wa.me/213772711667?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+}
+
+function orderGray() {
+
+  const message =
+    "السلام عليكم، أريد طلب تصميم Gray Premium بسعر 1000 دج.";
+
+  window.open(
+    "https://wa.me/213772711667?text=" +
+    encodeURIComponent(message),
+    "_blank"
+  );
+}
+
+</script>
+
+</body>
+</html>
